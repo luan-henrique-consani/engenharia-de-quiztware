@@ -18,35 +18,35 @@ const perguntas = [
 
 main.innerHTML = `     
         <div class="exit">
-            <a href="quiz.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            <a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                     width="24px" fill="#1f1f1f">
                     <path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z" />
                 </svg> Sair</a>
         </div>   
     <div class="medio">
             <div class="enunciado">
-                <h2>${perguntas.length+1}</h2>
-                <p>${perguntas[pergunta[indice]]}</p>
+                <h2>${indice+1}</h2>
+                <p>${perguntas[indice].pergunta}</p>
             </div>
 
             <div class="perguntas">
                 <div class="grupo-1">
                     <button class="opcao opcao-a">
                         <h3>A -</h3>
-                        <p>${perguntas[resposta.opa.res[1]]}</p>
+                        <p>${perguntas[indice].resposta.opa.res}</p>
                     </button>
                     <button class="opcao opcao-b">
                         <h3>B -</h3>
-                        <p>${perguntas[resposta.opb.res[1]]}</p>
+                        <p>${perguntas[indice].resposta.opb.res}</p>
                     </button>
                 </div>
                 <div class="grupo-2"><button class="opcao opcao-c">
                         <h3>C -</h3>
-                        <p>${perguntas[resposta.opc.res[1]]}</p>
+                        <p>${perguntas[indice].resposta.opc.res}</p>
                     </button>
                     <button class="opcao opcao-d">
                         <h3>D -</h3>
-                        <p>${perguntas[resposta.opd.res[1]]}</p>
+                        <p>${perguntas[indice].resposta.opd.res}</p>
                     </button>
                 </div>
             </div>
