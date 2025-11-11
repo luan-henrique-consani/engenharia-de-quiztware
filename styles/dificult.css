@@ -1,0 +1,88 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    justify-items: center;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(#020067, #2226ff);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.main h1{
+    color: whitesmoke;
+}
+
+.main .botoes{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+
+.main .botoes button{
+    width: 600px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+.main .botoes .fc{
+    background-color: #00b518;
+    color: whitesmoke;
+    transition: all .3s;
+}
+
+.main .botoes .md{
+    background-color: #b5b500;
+    color: whitesmoke;
+    transition: all .3s;
+}
+
+.main .botoes .df{
+    background-color: #e00000;
+    color: whitesmoke;
+    transition: all .3s;
+}
+
+.main .botoes .fc:hover{
+    background-color: whitesmoke;
+    color: #00b518;
+    border: 2px solid #00b518;
+
+}
+
+.main .botoes .md:hover{
+    background-color: whitesmoke;
+    color: #b5b500;
+    border: 2px solid #b5b500;
+
+}
+
+.main .botoes .df:hover{
+    background-color: whitesmoke;
+    color: #e00000;
+    border: 2px solid #e00000;
+
+}
+
+
+
+
+.copy {
+    color: #ffffff87;
+    margin: 0;
+}

@@ -406,13 +406,14 @@ function estaCerta(peso) {
     console.log("Acertou");
     renderizarPergunta();
   } else if (peso == 0) {
-    main.innerHTML = `
-                <div class="sucesso confetti">
-            <h1>Sucesso</h1>
+    if (indice == 0) {
+      main.innerHTML = `
+                <div class="quepena">
+            <h1>Que pena...</h1>
 
             <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
 
-            <p id="sec">Você é muito inteligente!</p>
+            <p id="sec">Você poderia ter ido melhor!</p>
 
             <div class="botoes">   
                 <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
@@ -420,6 +421,37 @@ function estaCerta(peso) {
             </div>
 
         </div>`;
+    } else if (indice < 4) {
+      main.innerHTML = `
+                <div class="sucesso">
+            <h1>Quase conseguiu!</h1>
+
+            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
+
+            <p id="sec">Tenho certeza que na próxima você vai acertar tudo!</p>
+
+            <div class="botoes">   
+                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../index.html"><button>Você deseja sair?</button></a>
+            </div>
+
+        </div>`;
+    } else if (indice >= 4) {
+      main.innerHTML = `
+                <div class="sucesso confetti">
+            <h1>Parabéns, está muito próximo!</h1>
+
+            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
+
+            <p id="sec">Você é o novo Albert Einstein?</p>
+
+            <div class="botoes">   
+                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../index.html"><button>Você deseja sair?</button></a>
+            </div>
+
+        </div>`;
+    }
   }
 }
 
@@ -434,7 +466,7 @@ function renderizarPergunta() {
             <p id="sec">Você é muito inteligente!</p>
 
             <div class="botoes">   
-                <a href=""><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
                 <a href="../index.html"><button>Você deseja sair?</button></a>
             </div>
 
@@ -471,13 +503,13 @@ function renderizarPergunta() {
                     <button class="opcao opcao-a" onclick="estaCerta(${
                       vetorPer.resposta.opa.peso
                     })">
-                        <h3>A -</h3>
+                        <h3>A </h3>
                         <p>${vetorPer.resposta.opa.res}</p>
                     </button>
                     <button class="opcao opcao-b" onclick="estaCerta(${
                       vetorPer.resposta.opb.peso
                     })">
-                        <h3>B -</h3>
+                        <h3>B </h3>
                         <p>${vetorPer.resposta.opb.res}</p>
                     </button>
                 </div>
@@ -485,13 +517,13 @@ function renderizarPergunta() {
                     <button class="opcao opcao-c" onclick="estaCerta(${
                       vetorPer.resposta.opc.peso
                     })">
-                        <h3>C -</h3>
+                        <h3>C </h3>
                         <p>${vetorPer.resposta.opc.res}</p>
                     </button>
                     <button class="opcao opcao-d" onclick="estaCerta(${
                       vetorPer.resposta.opd.peso
                     })">
-                        <h3>D -</h3>
+                        <h3>D </h3>
                         <p>${vetorPer.resposta.opd.res}</p>
                     </button>
                 </div>
