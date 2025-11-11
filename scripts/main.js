@@ -7,16 +7,41 @@ const main = document.querySelector(".main");
 
 let indice = 0;
 
+
+
 const perguntas = [
     {pergunta: "Scrum é um framework?", resposta: {
         opa: {res: "Sim", peso: 1},
         opb: {res: "Não", peso: 0},
         opc: {res: "Talvez", peso: 0},
         opd: {res: "O que é framework", peso: 0},
+    } ,dificuldade: 0},
+    {pergunta: "Scrum é dificil", resposta: {
+        opa: {res: "Sim", peso: 1},
+        opb: {res: "com certeza", peso: 0},
+        opc: {res: "claro", peso: 0},
+        opd: {res: "O que é scrum?", peso: 0},
     } ,dificuldade: 0}
 ]
 
-main.innerHTML = `     
+
+function estaCerta(peso){
+    if(peso == 1){
+        indice ++;
+        console.log("Acertou");
+        renderizarPergunta();
+    }
+    else if(peso == 0){
+        console.log("Errou");
+    }
+}
+
+function renderizarPergunta(){
+    if(indice == perguntas.length){
+        console.log("parabens")
+    }
+    else{
+        main.innerHTML = `     
         <div class="exit">
             <a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                     width="24px" fill="#1f1f1f">
@@ -25,26 +50,27 @@ main.innerHTML = `
         </div>   
     <div class="medio">
             <div class="enunciado">
-                <h2>${indice+1}</h2>
+                <h2>${indice+1} )</h2>
                 <p>${perguntas[indice].pergunta}</p>
             </div>
 
             <div class="perguntas">
                 <div class="grupo-1">
-                    <button class="opcao opcao-a">
+                    <button class="opcao opcao-a" onclick="estaCerta(${perguntas[indice].resposta.opa.peso})">
                         <h3>A -</h3>
                         <p>${perguntas[indice].resposta.opa.res}</p>
                     </button>
-                    <button class="opcao opcao-b">
+                    <button class="opcao opcao-b" onclick="estaCerta(${perguntas[indice].resposta.opb.peso})">
                         <h3>B -</h3>
                         <p>${perguntas[indice].resposta.opb.res}</p>
                     </button>
                 </div>
-                <div class="grupo-2"><button class="opcao opcao-c">
+                <div class="grupo-2">
+                    <button class="opcao opcao-c" onclick="estaCerta(${perguntas[indice].resposta.opc.peso})">
                         <h3>C -</h3>
                         <p>${perguntas[indice].resposta.opc.res}</p>
                     </button>
-                    <button class="opcao opcao-d">
+                    <button class="opcao opcao-d" onclick="estaCerta(${perguntas[indice].resposta.opd.peso})">
                         <h3>D -</h3>
                         <p>${perguntas[indice].resposta.opd.res}</p>
                     </button>
@@ -54,3 +80,8 @@ main.innerHTML = `
 
         <h3 class="nivel" >Nivel: <span class="color fc">Fácil</span></h3>
     </div>`;
+    }
+}
+
+renderizarPergunta();
+
