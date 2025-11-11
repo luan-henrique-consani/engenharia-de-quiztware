@@ -9,10 +9,11 @@ body {
     background: linear-gradient(#020067, #2226ff);
 }
 
-.exit svg{
+.exit svg {
     width: 25px;
 }
-.exit a{
+
+.exit a {
     display: flex;
     align-items: center;
     font-size: 18px;
@@ -29,7 +30,64 @@ body {
     margin-top: 50px;
     justify-content: space-around;
     border-radius: 20px;
-    box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+}
+
+.main .sucesso {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main .sucesso h1 {
+    color: #0fb300;
+    font-size: 100px;
+    margin: 0;
+}
+
+.main .sucesso #pri {
+    color: #020067;
+    font-size: 40px;
+    margin: 0.5;
+    margin-bottom: 0;
+}
+
+.main .sucesso #sec {
+    color: #020067;
+    font-size: 25px;
+    margin: 0.5;
+}
+
+.main .botoes {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    z-index: 20
+}
+
+.main .botoes button {
+    width: 400px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #020067;
+    color: whitesmoke;
+    transition: all .3s;
+    ;
+}
+
+.main .botoes button:hover {
+    width: 400px;
+    height: 50px;
+    border: 1px solid #020067;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    color: #020067;
 }
 
 .medio {
@@ -38,40 +96,44 @@ body {
     width: 80%;
     height: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .medio .enunciado {
     display: flex;
     align-items: center;
-    width: 800px;
+    width: 90%;
 }
 
 .medio .enunciado h2 {
     margin-right: 1%;
+    width: 32px;
 }
 
 .medio .enunciado p {
     display: flex;
     width: auto;
     min-width: 240px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .medio .perguntas {
     display: flex;
-    width: 800px;
+    width: 100%;
+    height: 200px;
 }
 
 .medio .perguntas .grupo-1 {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 50%;
+    align-items: center;
     margin-right: 5px;
 }
 
 .medio .perguntas .grupo-1 button {
-    width: 400px;
+    width: 500px;
+    height: 300px;
     border: none;
     border-radius: 20px;
     background-color: #020067;
@@ -80,7 +142,7 @@ body {
 }
 
 .medio .perguntas .grupo-1 button:hover {
-    width: 400px;
+    width: 500px;
     border: 1px solid #020067;
     border-radius: 20px;
     background-color: whitesmoke;
@@ -88,8 +150,9 @@ body {
 }
 
 
-.medio .perguntas .grupo-1 button h3{
+.medio .perguntas .grupo-1 button h3 {
     margin-right: 5px;
+    width: 70px;
 }
 
 .medio .perguntas .grupo-1 .opcao-a {
@@ -99,11 +162,13 @@ body {
 .medio .perguntas .grupo-2 {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 50%;
+    align-items: center;
 }
 
 .medio .perguntas .grupo-2 button {
-    width: 400px;
+    width: 500px;
+    height: 300px;
     border: none;
     border-radius: 20px;
     background-color: #020067;
@@ -112,15 +177,16 @@ body {
 }
 
 .medio .perguntas .grupo-2 button:hover {
-    width: 400px;
+    width: 500px;
     border: 1px solid #020067;
     border-radius: 20px;
     background-color: whitesmoke;
     color: #020067;
 }
 
-.medio .perguntas .grupo-2 button h3{
+.medio .perguntas .grupo-2 button h3 {
     margin-right: 5px;
+    width: 70px;
 }
 
 .medio .perguntas .grupo-2 .opcao-c {
@@ -139,17 +205,17 @@ body {
     font-size: 20px;
 }
 
-.nivel .fc{
+.nivel .fc {
     font-size: 25px;
     color: #0b8a00;
 }
 
-.nivel .md{
+.nivel .md {
     font-size: 25px;
     color: #d68100;
 }
 
-.nivel .df{
+.nivel .df {
     font-size: 25px;
     color: #df0000;
 }
@@ -165,4 +231,122 @@ body {
 .footer .copy {
     color: #ffffff87;
     margin: 0;
+}
+
+
+.confetti {
+    --animation_speed: 5s;
+    --paper_color1: #a4d6f3;
+    --paper_color2: #ff0000;
+    --paper_color3: #d700ff;
+    --paper_color4: #0000ff;
+    --paper_color5: #ffb000;
+    --paper_color6: #ff00e0;
+    position: relative;
+}
+
+.confetti::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1300px;
+    height: 1300px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    display: block;
+    animation: confetti var(--animation_speed) ease-in-out forwards;
+
+    /* 60 confetes de várias cores */
+    background-image:
+        linear-gradient(var(--paper_color1) 50%, transparent 20%),
+        linear-gradient(var(--paper_color2) 50%, transparent 20%),
+        linear-gradient(var(--paper_color3) 25%, transparent 20%),
+        linear-gradient(var(--paper_color4) 40%, transparent 20%),
+        linear-gradient(var(--paper_color5) 70%, transparent 20%),
+        linear-gradient(var(--paper_color6) 60%, transparent 20%),
+        linear-gradient(var(--paper_color1) 40%, transparent 20%),
+        linear-gradient(var(--paper_color2) 50%, transparent 20%),
+        linear-gradient(var(--paper_color3) 15%, transparent 20%),
+        linear-gradient(var(--paper_color4) 40%, transparent 20%),
+        linear-gradient(var(--paper_color5) 70%, transparent 20%),
+        linear-gradient(var(--paper_color6) 60%, transparent 20%),
+        linear-gradient(var(--paper_color1) 45%, transparent 20%),
+        linear-gradient(var(--paper_color2) 75%, transparent 20%),
+        linear-gradient(var(--paper_color3) 55%, transparent 20%),
+        linear-gradient(var(--paper_color4) 45%, transparent 20%),
+        linear-gradient(var(--paper_color5) 65%, transparent 20%),
+        linear-gradient(var(--paper_color6) 60%, transparent 20%),
+        linear-gradient(var(--paper_color1) 30%, transparent 20%),
+        linear-gradient(var(--paper_color2) 70%, transparent 20%),
+        linear-gradient(var(--paper_color3) 45%, transparent 20%),
+        linear-gradient(var(--paper_color4) 55%, transparent 20%),
+        linear-gradient(var(--paper_color5) 65%, transparent 20%),
+        linear-gradient(var(--paper_color6) 50%, transparent 20%),
+        linear-gradient(var(--paper_color1) 35%, transparent 20%),
+        /* extras */
+        linear-gradient(var(--paper_color2) 60%, transparent 20%),
+        linear-gradient(var(--paper_color3) 40%, transparent 20%),
+        linear-gradient(var(--paper_color4) 80%, transparent 20%),
+        linear-gradient(var(--paper_color5) 60%, transparent 20%),
+        linear-gradient(var(--paper_color6) 70%, transparent 20%),
+        linear-gradient(var(--paper_color1) 50%, transparent 20%),
+        linear-gradient(var(--paper_color2) 50%, transparent 20%),
+        linear-gradient(var(--paper_color3) 30%, transparent 20%),
+        linear-gradient(var(--paper_color4) 40%, transparent 20%),
+        linear-gradient(var(--paper_color5) 60%, transparent 20%),
+        linear-gradient(var(--paper_color6) 40%, transparent 20%),
+        linear-gradient(var(--paper_color1) 70%, transparent 20%),
+        linear-gradient(var(--paper_color2) 80%, transparent 20%),
+        linear-gradient(var(--paper_color3) 60%, transparent 20%),
+        linear-gradient(var(--paper_color4) 30%, transparent 20%),
+        linear-gradient(var(--paper_color5) 70%, transparent 20%),
+        linear-gradient(var(--paper_color6) 50%, transparent 20%),
+        linear-gradient(var(--paper_color1) 60%, transparent 20%),
+        linear-gradient(var(--paper_color2) 70%, transparent 20%),
+        linear-gradient(var(--paper_color3) 40%, transparent 20%),
+        linear-gradient(var(--paper_color4) 80%, transparent 20%),
+        linear-gradient(var(--paper_color5) 60%, transparent 20%),
+        linear-gradient(var(--paper_color6) 70%, transparent 20%),
+        linear-gradient(var(--paper_color1) 50%, transparent 20%),
+        linear-gradient(var(--paper_color2) 50%, transparent 20%),
+        linear-gradient(var(--paper_color3) 30%, transparent 20%),
+        linear-gradient(var(--paper_color4) 40%, transparent 20%),
+        linear-gradient(var(--paper_color5) 60%, transparent 20%),
+        linear-gradient(var(--paper_color6) 40%, transparent 20%);
+
+    background-size:
+        12px 12px, 18px 18px, 14px 16px, 20px 20px, 10px 10px,
+        16px 14px, 22px 22px, 18px 16px, 12px 10px, 14px 18px,
+        16px 14px, 12px 12px, 20px 20px, 18px 18px, 10px 14px,
+        14px 12px, 12px 16px, 16px 18px, 22px 22px, 14px 14px,
+        18px 16px, 12px 12px, 20px 20px, 10px 10px, 14px 14px,
+        18px 16px, 22px 22px, 10px 14px, 12px 16px, 14px 18px,
+        10px 10px, 20px 20px, 16px 18px, 22px 20px, 18px 22px,
+        16px 14px, 14px 14px, 12px 10px, 18px 20px, 20px 18px,
+        14px 16px, 16px 14px, 18px 18px, 22px 22px, 10px 10px,
+        20px 20px, 16px 14px, 14px 12px, 22px 18px, 16px 14px,
+        20px 18px, 14px 16px, 12px 12px, 18px 14px, 22px 20px,
+        10px 10px, 18px 20px, 16px 18px, 20px 22px, 14px 16px;
+}
+
+@keyframes confetti {
+    0% {
+        opacity: 1;
+        background-position:
+            2% -10%, 5% -20%, 8% -15%, 10% -25%, 12% -10%, 15% -20%, 18% -15%, 20% -25%, 23% -10%, 25% -20%,
+            28% -15%, 30% -25%, 33% -10%, 35% -20%, 38% -15%, 40% -25%, 43% -10%, 45% -20%, 48% -15%, 50% -25%,
+            53% -10%, 55% -20%, 58% -15%, 60% -25%, 63% -10%, 65% -20%, 68% -15%, 70% -25%, 73% -10%, 75% -20%,
+            78% -15%, 80% -25%, 83% -10%, 85% -20%, 88% -15%, 90% -25%, 93% -10%, 95% -20%, 98% -15%, 100% -25%;
+    }
+
+    100% {
+        opacity: 0;
+        background-position:
+            2% 120%, 5% 130%, 8% 110%, 10% 150%, 12% 130%, 15% 140%, 18% 120%, 20% 150%, 23% 110%, 25% 160%,
+            28% 130%, 30% 140%, 33% 150%, 35% 130%, 38% 140%, 40% 150%, 43% 130%, 45% 160%, 48% 120%, 50% 150%,
+            53% 130%, 55% 150%, 58% 140%, 60% 160%, 63% 130%, 65% 140%, 68% 150%, 70% 130%, 73% 160%, 75% 140%,
+            78% 150%, 80% 130%, 83% 140%, 85% 150%, 88% 130%, 90% 160%, 93% 120%, 95% 140%, 98% 150%, 100% 130%;
+    }
 }
