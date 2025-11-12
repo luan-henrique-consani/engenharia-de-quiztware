@@ -416,7 +416,7 @@ function estaCerta(peso) {
             <p id="sec">Você poderia ter ido melhor!</p>
 
             <div class="botoes">   
-                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../pages/quiz.html?dificuldade=${dificuldade}"><button>Você deseja Resetar?</button></a>
                 <a href="../index.html"><button>Você deseja sair?</button></a>
             </div>
 
@@ -431,7 +431,7 @@ function estaCerta(peso) {
             <p id="sec">Tenho certeza que na próxima você vai acertar tudo!</p>
 
             <div class="botoes">   
-                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../pages/quiz.html?dificuldade=${dificuldade}"><button>Você deseja Resetar?</button></a>
                 <a href="../index.html"><button>Você deseja sair?</button></a>
             </div>
 
@@ -446,7 +446,7 @@ function estaCerta(peso) {
             <p id="sec">Você é o novo Albert Einstein?</p>
 
             <div class="botoes">   
-                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+                <a href="../pages/quiz.html?dificuldade=${dificuldade}"><button>Você deseja Resetar?</button></a>
                 <a href="../index.html"><button>Você deseja sair?</button></a>
             </div>
 
@@ -462,10 +462,14 @@ function renderizarPergunta() {
             <h1>Sucesso!</h1>
 
             <p id="pri">Você concluiu esse quiz com ${indice} de ${faceis.length} respostas certas!</p>
-            <p id="sec">Alan Tiring, você está entre nós?</p>
+            <p id="sec">Alan Turing, você está entre nós?</p>
 
             <div class="botoes">   
-                <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
+            ${dificuldade < 2
+              ? `<a href="../pages/quiz.html?dificuldade=${parseInt(dificuldade) + 1}">
+                <button>Você deseja tentar um novo nível?</button>
+              </a>`
+            : ''}
                 <a href="../index.html"><button>Você deseja sair?</button></a>
             </div>
 
