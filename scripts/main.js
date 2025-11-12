@@ -411,7 +411,7 @@ function estaCerta(peso) {
                 <div class="quepena">
             <h1>Que pena...</h1>
 
-            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
+            <p id="pri">Você concluiu esse quiz com ${indice} de ${faceis.length} respostas certas!</p>
 
             <p id="sec">Você poderia ter ido melhor!</p>
 
@@ -426,7 +426,7 @@ function estaCerta(peso) {
                 <div class="sucesso">
             <h1>Quase conseguiu!</h1>
 
-            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
+            <p id="pri">Você concluiu esse quiz com ${indice} de ${faceis.length} respostas certas!</p>
 
             <p id="sec">Tenho certeza que na próxima você vai acertar tudo!</p>
 
@@ -441,7 +441,7 @@ function estaCerta(peso) {
                 <div class="sucesso confetti">
             <h1>Parabéns, está muito próximo!</h1>
 
-            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
+            <p id="pri">Você concluiu esse quiz com ${indice} de ${faceis.length} respostas certas!</p>
 
             <p id="sec">Você é o novo Albert Einstein?</p>
 
@@ -459,11 +459,10 @@ function renderizarPergunta() {
   if (indice == faceis.length) {
     main.innerHTML = `
                 <div class="sucesso confetti">
-            <h1>Sucesso</h1>
+            <h1>Sucesso!</h1>
 
-            <p id="pri">Você concluiu esse quiz com ${indice} respostas certas!</p>
-
-            <p id="sec">Você é muito inteligente!</p>
+            <p id="pri">Você concluiu esse quiz com ${indice} de ${faceis.length} respostas certas!</p>
+            <p id="sec">Alan Tiring, você está entre nós?</p>
 
             <div class="botoes">   
                 <a href="../pages/dificuldade.html"><button>Você deseja tentar um novo nivel?</button></a>
@@ -500,29 +499,25 @@ function renderizarPergunta() {
 
             <div class="perguntas">
                 <div class="grupo-1">
-                    <button class="opcao opcao-a" onclick="estaCerta(${
-                      vetorPer.resposta.opa.peso
-                    })">
+                    <button class="opcao opcao-a" onclick="estaCerta(${vetorPer.resposta.opa.peso
+      })">
                         <h3>A </h3>
                         <p>${vetorPer.resposta.opa.res}</p>
                     </button>
-                    <button class="opcao opcao-b" onclick="estaCerta(${
-                      vetorPer.resposta.opb.peso
-                    })">
+                    <button class="opcao opcao-b" onclick="estaCerta(${vetorPer.resposta.opb.peso
+      })">
                         <h3>B </h3>
                         <p>${vetorPer.resposta.opb.res}</p>
                     </button>
                 </div>
                 <div class="grupo-2">
-                    <button class="opcao opcao-c" onclick="estaCerta(${
-                      vetorPer.resposta.opc.peso
-                    })">
+                    <button class="opcao opcao-c" onclick="estaCerta(${vetorPer.resposta.opc.peso
+      })">
                         <h3>C </h3>
                         <p>${vetorPer.resposta.opc.res}</p>
                     </button>
-                    <button class="opcao opcao-d" onclick="estaCerta(${
-                      vetorPer.resposta.opd.peso
-                    })">
+                    <button class="opcao opcao-d" onclick="estaCerta(${vetorPer.resposta.opd.peso
+      })">
                         <h3>D </h3>
                         <p>${vetorPer.resposta.opd.res}</p>
                     </button>
@@ -530,7 +525,10 @@ function renderizarPergunta() {
             </div>
         </div>
 
-        <h3 class="nivel" >Nivel: <span class="color ${colorDif}">${colorText}</span></h3>
+        <div class="">
+          <h3 class="nivel" >Nivel: <span class="color ${colorDif}">${colorText}</span></h3>
+          <h3 class="nivel">Acertos: ${indice}/${faceis.length}</h3>
+        </div>
     </div>`;
   }
 }

@@ -9,7 +9,7 @@ body {
     background: linear-gradient(#020067, #2226ff);
 }
 
-.main{
+.main {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -19,20 +19,24 @@ body {
 
 }
 
-.main h1{
+.main h1 {
     color: whitesmoke;
 }
 
-.main .botoes{
+.main h2 {
+    color: whitesmoke;
+}
+
+.main .botoes {
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 50%;
     align-items: center;
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
 }
 
-.main .botoes button{
+.main .botoes button {
     width: 600px;
     height: 60px;
     border: none;
@@ -40,46 +44,57 @@ body {
     font-size: 25px;
 }
 
-.main .botoes .fc{
+.main .botoes .fc {
     background-color: #00b518;
     color: whitesmoke;
     transition: all .3s;
 }
 
-.main .botoes .md{
+.main .botoes .md {
     background-color: #b5b500;
     color: whitesmoke;
     transition: all .3s;
 }
 
-.main .botoes .df{
+.main .botoes .df {
     background-color: #e00000;
     color: whitesmoke;
     transition: all .3s;
 }
 
-.main .botoes .fc:hover{
+.main .botoes .fc:hover {
     background-color: whitesmoke;
     color: #00b518;
     border: 2px solid #00b518;
 
 }
 
-.main .botoes .md:hover{
+.main .botoes .md:hover {
     background-color: whitesmoke;
     color: #b5b500;
     border: 2px solid #b5b500;
 
 }
 
-.main .botoes .df:hover{
+.main .botoes .df:hover {
     background-color: whitesmoke;
     color: #e00000;
     border: 2px solid #e00000;
 
 }
 
+.exit svg {
+    width: clamp(18px, 2vw, 25px);
+}
 
+.exit a {
+    display: flex;
+    align-items: center;
+    font-size: clamp(14px, 1.2vw, 18px);
+    margin-top: 1rem;
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 
 .copy {

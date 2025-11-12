@@ -22,7 +22,7 @@ body {
     font-size: clamp(14px, 1.2vw, 18px);
     margin-top: 1rem;
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 
@@ -49,13 +49,13 @@ body {
 
 .main .sucesso h1 {
     color: #0fb300;
-    font-size: clamp(50px, 8vw, 100px);
+    font-size: 400%;
     margin: 0;
 }
 
 .main .quepena h1 {
     color: #e00000;
-    font-size: clamp(50px, 8vw, 100px);
+    font-size: 500%;
     margin: 0;
 }
 
@@ -78,6 +78,7 @@ body {
     gap: 2vw;
     justify-content: center;
     margin-top: 3vh;
+    z-index: 20;
 }
 
 .main .botoes button {
@@ -117,7 +118,7 @@ body {
 
 .medio .enunciado h2 {
     font-size: clamp(18px, 2vw, 24px);
-    width: 5%;
+    width: 9%;
 }
 
 .medio .enunciado p {
@@ -126,7 +127,7 @@ body {
 
 .medio .perguntas {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     justify-content: center;
     gap: 2vh;
